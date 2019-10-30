@@ -12,6 +12,11 @@ def connect():
     app.logger.info('connection')
 
 
+@socketio.on('name_event', namespace='socketio')
+def name(json):
+    app.logger.info('first name: ' + json['first_name'] + ', last name: ' + json['last_name'])
+
+
 @app.route('/name/<name>')
 def hello_world(name):
     app.logger.info("My name is " + name)
