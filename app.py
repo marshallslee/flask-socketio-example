@@ -7,12 +7,12 @@ app = Flask(__name__)
 socketio = SocketIO(app)
 
 
-@socketio.on('connect', namespace='socketio')
+@socketio.on('connect', namespace='/socketio')
 def connect():
     app.logger.info('connection')
 
 
-@socketio.on('name_event', namespace='socketio')
+@socketio.on('name_event', namespace='/socketio')
 def name(json):
     app.logger.info('first name: ' + json['first_name'] + ', last name: ' + json['last_name'])
 
