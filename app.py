@@ -19,7 +19,7 @@ def hello_world(name):
 
 
 if __name__ == '__main__':
-    file_handler = FileHandler('/chitchat-data/output.log')
+    file_handler = FileHandler('/flasksocketiosample/output.log')
     file_handler.setFormatter(Formatter(
         '%(asctime)s %(levelname)s: %(message)s '
         '[in %(pathname)s:%(lineno)d]'
